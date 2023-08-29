@@ -1,11 +1,16 @@
 //your JS code here. If required
-.
-function returnPromise() {
-	let pro=new Promise((resolve)=>{
-		setTimeout(()=>{resolve("Hello, world!")},1000);
-	})
-	return pro;
+function giveInput () {
+    let prom =   new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Hello, world!');
+        },1000)
+    })
+    return prom;
 }
 
-let ele=document.getElementById("output");
-returnPromise().then((data)=>{ele.innerText=data;})
+let x = giveInput();
+
+x.then((data) =>{
+    let div = document.getElementById("output");
+    div.innerHTML = data;
+})
